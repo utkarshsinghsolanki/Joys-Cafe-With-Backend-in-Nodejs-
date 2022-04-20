@@ -4,7 +4,6 @@ const app = express();
 const fs = require('fs');
 const mongoose = require('mongoose');
 
-const port = process.env.PORT || 8000;
 // MONGOOSE SPECIFIC STUFF
 mongoose.connect('mongodb://localhost/joyscafe', {useNewUrlParser: true}, {useUnifiedTopology: true})
 var db = mongoose.connection;
@@ -57,6 +56,7 @@ app.post('/contact', (req, res) => {
     })
 })
 
+var port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log("App is running on port " + port);
 });
