@@ -2,25 +2,25 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const fs = require('fs');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 
 // MONGOOSE SPECIFIC STUFF
-mongoose.connect('mongodb://localhost/joyscafe', {useNewUrlParser: true}, {useUnifiedTopology: true})
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, "Connection Error:"));
-db.once('open', ()=>{
-    console.log('Connected To MongoD...');
-});
+// mongoose.connect('mongodb://localhost/joyscafe', {useNewUrlParser: true}, {useUnifiedTopology: true})
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, "Connection Error:"));
+// db.once('open', ()=>{
+//     console.log('Connected To MongoD...');
+// });
 
-const Schema = new mongoose.Schema({
-    name: String,
-    phone: Number,
-    guests: Number,
-    date: String,
-    message: String
-});
+// const Schema = new mongoose.Schema({
+//     name: String,
+//     phone: Number,
+//     guests: Number,
+//     date: String,
+//     message: String
+// });
 
-const client = mongoose.model('client', Schema);
+// const client = mongoose.model('client', Schema);
 
 // EXPRESS SPECIFIC STUFF
 app.use('/static', express.static('static')) // For serving static files
@@ -49,11 +49,11 @@ app.get('/contact', (req, res) => {
 // Getting Contact Form Post Request
 app.post('/contact', (req, res) => {
     var newclient = new client(req.body);
-    newclient.save().then(()=>{
-        res.status(200).render('reserve.pug', {title: `Joy's Cafe || Contact Us`, response: "Your Seat Is Reserved"})
-    }).catch(err => {
-        res.status(400).render('reserve.pug', {title: `Joy's Cafe || Contact Us`, response: err + "Some technical error occurred..."})
-    })
+    // newclient.save().then(()=>{
+    //     res.status(200).render('reserve.pug', {title: `Joy's Cafe || Contact Us`, response: "Your Seat Is Reserved"})
+    // }).catch(err => {
+    //     res.status(400).render('reserve.pug', {title: `Joy's Cafe || Contact Us`, response: err + "Some technical error occurred..."})
+    // })
 })
 
 var port = process.env.PORT || 8000;
