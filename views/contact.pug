@@ -1,0 +1,56 @@
+extends layout.pug
+
+block content
+    .heading
+      h1 Contact Us
+    .contact-txt
+      span.greeting Contact Us
+      .ways
+        .Visit.c-txt
+          h1 Visit Us
+          br
+          p
+            | Faster than you can imagine.We speak the good food language. Come and visit.
+        hr
+        .contact.c-txt
+          h1 Contact Us
+          br
+          p
+            a(href='tel:1800-250-911')
+              b 1800-250-911
+            |  | 
+            a(href='tel:180-250-922')
+              b 1800-250-922
+          br
+          a(href='mailto:joyscafe@gmail.com') joyscafe@gmail.com
+        hr
+        .hours.c-txt
+          h1 Opening Hours
+          br
+          p
+            | We are open in the following schedule bellow:
+          br
+          hr(style='color:goldenrod; width:100%;')
+          br
+          p
+            b Monday to Sunday:
+            |                         10 a.m to 11 p.m
+    .contact-form
+      span.greeting Reserve Your Seat
+      form(action="contact", method="post")
+        .form
+            .details
+              input#name(type='text' name='name' placeholder='Name*')
+              #invalidName * Please Enter Valid Name *
+              input#phone(type='tel' name='phone' placeholder='Phone No.*')
+              #invalidPhone * Please Enter Valid Phone Number *
+              .extra-details
+                input#guest(type='number' name='guests' placeholder='No. Of Guests')
+                input#date(type='date' name='date' placeholder='Date And Time*')
+                #invalidDate * Please Enter Date *
+            .msg
+              input#message(type='text' name='message' placeholder='Enter Your Concern')
+        br
+        h3#invalid
+        button#submit-btn(disabled=true)
+            b Reserve

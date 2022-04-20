@@ -1,0 +1,43 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title #{title}
+  link(rel='stylesheet' href='../static/css/style.css')
+  link(rel='stylesheet' href='../static/css/responsive.css')
+body
+  header
+    span.logo-container
+      img.logo(src='../static/images/logo.jpg' alt='logo')
+    nav.nav.nav-go
+      ul
+        li
+          a(href='/')
+            img.ico(src='../static/images/home.png' alt='')
+            | Home
+        li
+          a(href='menu')
+            img.ico(src='../static/images/menu.png' alt='')
+            | Menu
+        li
+          a(href='gallery')
+            img.ico(src='../static/images/gallery.png' alt='')
+            | Gallery
+        li
+          a(href='about')
+            img.ico(src='../static/images/info.png' alt='')
+            | About Us
+        li
+          a(href='contact')
+            img.ico(src='../static/images/contact.png' alt='')
+            | Contact
+    img.menu-btn(src='../static/images/menu-btn.png' alt='')
+
+  main
+    block content
+
+  footer
+        h2 Copyright &copy; 2022 Joy&apos;s Cafe. || All rights reserved.
+
+script(src="../static/js/main.js") 
