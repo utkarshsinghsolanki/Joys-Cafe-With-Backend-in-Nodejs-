@@ -52,7 +52,7 @@ app.post('/contact', (req, res) => {
     newclient.save().then(()=>{
         res.status(200).render('reserve.pug', {title: `Joy's Cafe || Contact Us`, response: "Your Seat Is Reserved"})
     }).catch(err => {
-        res.status(400).render('reserve.pug', {title: `Joy's Cafe || Contact Us`, response: "Some technical error occurred..."})
+        res.status(400).render('reserve.pug', {title: `Joy's Cafe || Contact Us`, response: err + "Some technical error occurred..."})
     })
 })
 
